@@ -2,29 +2,29 @@ console.log("Welcome to Spotify");
 
 // Initialize the Variables
 let songIndex = 0;
-let audioElement = new Audio('songs/1.mp3');
+let audioElement = new Audio('song2/1.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
 let masterSongName = document.getElementById('masterSongName');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 
-let songs = [
-    {songName: "Warriyo - Mortals [NCS Release]", filePath: "songs/1.mp3", coverPath: "cover1/1.jpg"},
-    {songName: "Cielo - Huma-Huma", filePath: "songs/2.mp3", coverPath: "cover1/2.jpg"},
-    {songName: "DEAF KEV - Invincible [NCS Release]-320k", filePath: "songs/3.mp3", coverPath: "cover1/3.jpg"},
-    {songName: "Different Heaven & EH!DE - My Heart [NCS Release]", filePath: "songs/4.mp3", coverPath: "cover1/4.jpg"},
-    {songName: "Janji-Heroes-Tonight-feat-Johnning-NCS-Release", filePath: "songs/5.mp3", coverPath: "cover1/5.jpg"},
-    {songName: "Rabba - Salam-e-Ishq", filePath: "songs/2.mp3", coverPath: "cover1/6.jpg"},
-    {songName: "Sakhiyaan - Salam-e-Ishq", filePath: "songs/2.mp3", coverPath: "cover1/7.jpg"},
-    {songName: "Bhula Dena - Salam-e-Ishq", filePath: "songs/2.mp3", coverPath: "cover1/8.jpg"},
-    {songName: "Tumhari Kasam - Salam-e-Ishq", filePath: "songs/2.mp3", coverPath: "cover1/9.jpg"},
-    {songName: "Na Jaana - Salam-e-Ishq", filePath: "songs/4.mp3", coverPath: "cover1/10.jpg"},
+let song2 = [
+    {songName: "Warriyo - Mortals [NCS Release]", filePath: "song2/1.mp3", coverPath: "cover1/1.jpg"},
+    {songName: "Cielo - Huma-Huma", filePath: "song2/2.mp3", coverPath: "cover1/2.jpg"},
+    {songName: "DEAF KEV - Invincible [NCS Release]-320k", filePath: "song2/3.mp3", coverPath: "cover1/3.jpg"},
+    {songName: "Different Heaven & EH!DE - My Heart [NCS Release]", filePath: "song2/4.mp3", coverPath: "cover1/4.jpg"},
+    {songName: "Janji-Heroes-Tonight-feat-Johnning-NCS-Release", filePath: "song2/5.mp3", coverPath: "cover1/5.jpg"},
+    {songName: "Rabba - Salam-e-Ishq", filePath: "song2/2.mp3", coverPath: "cover1/6.jpg"},
+    {songName: "Sakhiyaan - Salam-e-Ishq", filePath: "song2/2.mp3", coverPath: "cover1/7.jpg"},
+    {songName: "Bhula Dena - Salam-e-Ishq", filePath: "song2/2.mp3", coverPath: "cover1/8.jpg"},
+    {songName: "Tumhari Kasam - Salam-e-Ishq", filePath: "song2/2.mp3", coverPath: "cover1/9.jpg"},
+    {songName: "Na Jaana - Salam-e-Ishq", filePath: "song2/4.mp3", coverPath: "cover1/10.jpg"},
 ]
 
 songItems.forEach((element, i)=>{ 
-    element.getElementsByTagName("img")[0].src = songs[i].coverPath; 
-    element.getElementsByClassName("songName")[0].innerText = songs[i].songName; 
+    element.getElementsByTagName("img")[0].src = song2[i].coverPath; 
+    element.getElementsByClassName("songName")[0].innerText = song2[i].songName; 
 })
  
 
@@ -67,8 +67,8 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         songIndex = parseInt(e.target.id);
         e.target.classList.remove('fa-play-circle');
         e.target.classList.add('fa-pause-circle');
-        audioElement.src = `songs/${songIndex+1}.mp3`;
-        masterSongName.innerText = songs[songIndex].songName;
+        audioElement.src = `song2/${songIndex+1}.mp3`;
+        masterSongName.innerText = song2[songIndex].songName;
         audioElement.currentTime = 0;
         audioElement.play();
         gif.style.opacity = 1;
@@ -84,8 +84,8 @@ document.getElementById('next').addEventListener('click', ()=>{
     else{
         songIndex += 1;
     }
-    audioElement.src = `songs/${songIndex+1}.mp3`;
-    masterSongName.innerText = songs[songIndex].songName;
+    audioElement.src = `song2/${songIndex+1}.mp3`;
+    masterSongName.innerText = song2[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
     masterPlay.classList.remove('fa-play-circle');
@@ -100,8 +100,8 @@ document.getElementById('previous').addEventListener('click', ()=>{
     else{
         songIndex -= 1;
     }
-    audioElement.src = `songs/${songIndex+1}.mp3`;
-    masterSongName.innerText = songs[songIndex].songName;
+    audioElement.src = `song2/${songIndex+1}.mp3`;
+    masterSongName.innerText = song2[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
     masterPlay.classList.remove('fa-play-circle');
